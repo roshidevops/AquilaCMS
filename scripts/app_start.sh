@@ -1,13 +1,10 @@
 #!/bin/bash
 
 #_Change_Working_Directory
-cd /home/ec2-user/server/apps/api
+cd /home/ec2-user/deploys
 
 #install pm2 again
-npm install -g pm2
-
-
-cd /home/ec2-user/server/apps/api
+pm2 start apps/api/index.js --name deploy1
 
 #start
-nohup npm start > output.log 2>&1 &
+#nohup npm start > output.log 2>&1 &
