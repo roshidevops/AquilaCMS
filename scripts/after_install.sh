@@ -1,17 +1,15 @@
 #!/bin/bash
 
 #_Change_Working_Directory
-cd /home/ec2-user/server
+cd /home/ec2-user/deploys/
 
 #_Remove_Unused_Code
 rm -rf node_modules
 
-#Install_node_modules_&_Make_React_Build
-npm  install -g yarn
-#Install_node_modules_&_Make_React_Build
+#stop server
+pm2 delete deploy1
+
 #Install_node_modules_&_Make_React_Build
 yarn install
-
-
-#installing pm
-npm install -g pm2
+#Install_node_modules_&_Make_React_Build
+yarn global add pm2
